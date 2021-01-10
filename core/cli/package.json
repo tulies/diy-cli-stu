@@ -1,0 +1,38 @@
+{
+  "name": "@diy-cli-stu/cli",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "tulies <346461062@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/cli.js",
+  "bin": {
+    "diy-cli-stu": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@diy-cli-stu/log": "file:/../../utils/log",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "import-local": "^3.0.2",
+    "minimist": "^1.2.5",
+    "npmlog": "^4.1.2",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.3.4",
+    "user-home": "^2.0.0"
+  }
+}
