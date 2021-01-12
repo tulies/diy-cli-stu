@@ -19,7 +19,7 @@ const log = require('@diy-cli-stu/log')
 
 module.exports = cli;
 let args, config;
-function cli() {
+async function cli() {
     try {
         checkPkgVersion()
         checkNodeVersion()
@@ -27,13 +27,25 @@ function cli() {
         checkUserHome()
         checkInputArgs()
         checkEnv()
+        await checkGlobalUpdate()
     } catch (e) {
         log.error(e.message)
     }
 }
 
-function checkGlobalUpdate(){
-    
+async function checkGlobalUpdate(){
+    // 1、获取当前版本号和模块名
+    // 2、调用npm API，获取所有版本号
+    // 3、提取所有版本号，比对哪些版本号是大于当前版本号
+    // 4. 获取最新的版本号，提示用户更新到最新版本
+
+    const currentVersion = pkg.version
+    const npmName = pkg.name
+    const {getNpmSemverVersion} = require('@diy-cli-stu/get-npm-info')
+    const lastVersion = await getNpmSemverVersion(currentVersion, npmName)
+    if(lastVersion && semver.gt(lastVersion,currentVersion)){
+        log.warn('更新提示',colors.yellow(`请手动更新${npmName}，当前版本：${currentVersion}，最新版本：${lastVersion}\n更新命令：npm install -g ${npmName}`))
+    }
 }
 
 function checkEnv(){

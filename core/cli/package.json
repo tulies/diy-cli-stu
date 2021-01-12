@@ -5,7 +5,7 @@
   "author": "tulies <346461062@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/cli.js",
+  "main": "lib/index.js",
   "bin": {
     "diy-cli-stu": "bin/index.js"
   },
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@diy-cli-stu/log": "file:/../../utils/log",
+    "@diy-cli-stu/get-npm-info": "file:/../../utils/get-npm-info",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "import-local": "^3.0.2",
