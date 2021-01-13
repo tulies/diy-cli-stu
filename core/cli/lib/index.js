@@ -17,6 +17,8 @@ const dotEnv = require('dotenv')
 const constant = require('./const')
 const log = require('@diy-cli-stu/log')
 
+const xx = require('./commander')
+
 module.exports = cli;
 let args, config;
 async function cli() {
