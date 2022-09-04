@@ -100,7 +100,8 @@ function checkRoot() {
     // 用 `sudo diy-cli-stu` 以root身份执行，发现返回的不是0。 
     // console.log(process.geteuid())
 }
-
+0
+// 检查node版本号
 function checkNodeVersion() {
     const currentVersion = process.version
     const lowestVersion = constant.LOWEST_NODE_VERSION
